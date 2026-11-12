@@ -7,7 +7,7 @@ double-booking protection, automatic pricing and interactive Swagger documentati
 |---|---|
 | **Live API** | `https://<your-app>.onrender.com/api/` *(add after deploying)* |
 | **Swagger UI** | `https://<your-app>.onrender.com/api/docs/` |
-| **Demo video** | *(add YouTube / Drive link here)* |
+| **Demo video** | https://drive.google.com/file/d/1BD_apZKyCkTByU7ALKW0QfVyICE4BVQr/view?usp=sharing |
 
 **Tech:** Python 3.10+ · Django 5.2 · Django REST Framework · django-filter · drf-spectacular (OpenAPI/Swagger) · WhiteNoise · Gunicorn · SQLite (dev) / PostgreSQL (prod)
 
@@ -194,6 +194,6 @@ vehicle_system/
 *Manual alternative:* create a Web Service (Build: `./build.sh`, Start: `gunicorn vehicle_system.wsgi:application`) and set `SECRET_KEY`, `DEBUG=False`, `DATABASE_URL`. The same files work on Railway, Heroku (`Procfile`) and PythonAnywhere.
 
 ## 8. Demo video
-📹 **Link:** *(add YouTube / Drive link here)*
+📹 **Link:** https://drive.google.com/file/d/1BD_apZKyCkTByU7ALKW0QfVyICE4BVQr/view?usp=sharing
 
 Suggested 3-minute script: run the server → open Swagger → add a vehicle → create a valid booking (show the calculated `total_amount` and `is_available` flipping to `false`) → show each validation error (overlap, past date, end ≤ start, bad phone) → show filters → run `python manage.py test`.
