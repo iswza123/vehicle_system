@@ -5,8 +5,8 @@ double-booking protection, automatic pricing and interactive Swagger documentati
 
 | | |
 |---|---|
-| **Live API** | `YOUR-LIVE-URL/api/` *(add after deploying)* |
-| **Swagger UI** | `YOUR-LIVE-URL/api/docs/` |
+| **Live API** | `https://vehicle-system-t935.onrender.com/api/` *(add after deploying)* |
+| **Swagger UI** | `https://vehicle-system-t935.onrender.com/api/docs/` |
 | **Demo video** | https://drive.google.com/file/d/1BD_apZKyCkTByU7ALKW0QfVyICE4BVQr/view?usp=sharing |
 
 **Tech:** Python 3.10+ · Django 5.2 · Django REST Framework · django-filter · drf-spectacular (OpenAPI/Swagger) · WhiteNoise · Gunicorn · SQLite (dev) / PostgreSQL (prod)
@@ -188,7 +188,7 @@ vehicle_system/
 
 1. Push this repo to GitHub.
 2. On https://render.com → **New → Blueprint** → select the repo. `render.yaml` provisions the web service **and** a PostgreSQL database, generates `SECRET_KEY` and runs `build.sh` (install → collectstatic → migrate).
-3. Open `YOUR-LIVE-URL/api/docs/`.
+3. Open `https://vehicle-system-t935.onrender.com/api/docs/`.
 4. Paste the live URL at the top of this README.
 
 *Manual alternative:* create a Web Service (Build: `./build.sh`, Start: `gunicorn vehicle_system.wsgi:application`) and set `SECRET_KEY`, `DEBUG=False`, `DATABASE_URL`. The same files work on Railway, Heroku (`Procfile`) and PythonAnywhere.
