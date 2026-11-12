@@ -1,0 +1,439 @@
+{
+  "info": {
+    "name": "Vehicle Inventory & Booking API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Vehicles",
+      "item": [
+        {
+          "name": "List vehicles",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/vehicles/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "vehicles"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Add vehicle",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/vehicles/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "vehicles"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Corolla\",\n  \"brand\": \"Toyota\",\n  \"year\": 2022,\n  \"price_per_day\": \"2500.00\",\n  \"fuel_type\": \"Petrol\",\n  \"is_available\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Vehicle details",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/vehicles/1/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "vehicles",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update vehicle (PUT)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/vehicles/1/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "vehicles",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Corolla\",\n  \"brand\": \"Toyota\",\n  \"year\": 2022,\n  \"price_per_day\": \"2700.00\",\n  \"fuel_type\": \"Petrol\",\n  \"is_available\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Delete vehicle",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/vehicles/1/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "vehicles",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Filter: brand=Toyota",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/vehicles/?brand=Toyota",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "vehicles"
+              ],
+              "query": [
+                {
+                  "key": "brand",
+                  "value": "Toyota"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Filter: fuel_type=Electric",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/vehicles/?fuel_type=Electric",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "vehicles"
+              ],
+              "query": [
+                {
+                  "key": "fuel_type",
+                  "value": "Electric"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Filter: is_available=true",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/vehicles/?is_available=true",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "vehicles"
+              ],
+              "query": [
+                {
+                  "key": "is_available",
+                  "value": "true"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bookings",
+      "item": [
+        {
+          "name": "List bookings",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/bookings/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "bookings"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create booking (valid)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/bookings/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "bookings"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vehicle\": 1,\n  \"customer_name\": \"Anjali Menon\",\n  \"customer_phone\": \"9876543210\",\n  \"start_date\": \"2030-01-10\",\n  \"end_date\": \"2030-01-13\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Create booking (double-booking -> 400)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/bookings/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "bookings"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vehicle\": 1,\n  \"customer_name\": \"Ravi\",\n  \"customer_phone\": \"9876543210\",\n  \"start_date\": \"2030-01-10\",\n  \"end_date\": \"2030-01-13\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Create booking (past start date -> 400)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/bookings/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "bookings"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vehicle\": 1,\n  \"customer_name\": \"Anjali Menon\",\n  \"customer_phone\": \"9876543210\",\n  \"start_date\": \"2020-01-01\",\n  \"end_date\": \"2020-01-05\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Create booking (end before start -> 400)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/bookings/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "bookings"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vehicle\": 1,\n  \"customer_name\": \"Anjali Menon\",\n  \"customer_phone\": \"9876543210\",\n  \"start_date\": \"2030-02-10\",\n  \"end_date\": \"2030-02-05\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Create booking (bad phone -> 400)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/bookings/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "bookings"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vehicle\": 1,\n  \"customer_name\": \"Anjali Menon\",\n  \"customer_phone\": \"12345\",\n  \"start_date\": \"2030-01-10\",\n  \"end_date\": \"2030-01-13\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Booking details",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/bookings/1/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "bookings",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
